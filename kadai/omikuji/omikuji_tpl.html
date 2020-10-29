@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+
+<header>
+    <!-- <h1>おみくじ</h1> -->
+</header>
+
+<main>
+    <button id="pull" type="image">
+        <img src="omikuji.jpg" id="omikuji">
+    </button>
+    
+    <!-- <ul>
+        <li id="pull">おみくじを引く</li>
+    </ul> -->
+    <p id="echo"></p>
+    <button id="relode"type="button">
+        もう一度引く
+    </button>
+</main>
+
+<footer></footer>
+<script>
+    const omikuji = document.querySelector("#omikuji");
+    const pull = document.querySelector("#pull");
+    const relode = document.querySelector("#relode");
+    pull.style.border="0";
+    relode.style.display="none";
+    
+// Clickイベントのブロック
+
+pull.onclick = function(){
+   
+    // 乱数を作る
+    const num =Math.ceil( Math.random()*10);
+
+    // 乱数をIF分岐処理で分ける
+    // 条件に合っていればalertで表示
+    if(num==1){
+        const echo = document.querySelector("#echo");
+        echo.innerHTML ='<img src="dai.jpg">';
+        omikuji.style.display="none";
+        pull.style.display="none";
+        relode.style.display="block";
+    }
+    if(num==2 || num==3){
+        const echo = document.querySelector("#echo");
+        echo.innerHTML ='<img src="chu.jpg">';
+        omikuji.style.display="none";
+        pull.style.display="none";
+        relode.style.display="block";
+    }
+    if(num==4 || num ==5){
+        const echo = document.querySelector("#echo");
+        echo.innerHTML ='<img src="sho.jpg">';
+        omikuji.style.display="none";
+        pull.style.display="none";
+        relode.style.display="block";
+    }
+    if(num==6 || num==7 ||num==8){
+        const echo = document.querySelector("#echo");
+        echo.innerHTML = '<img src="kichi.jpg">';
+        omikuji.style.display="none";
+        pull.style.display="none";
+        relode.style.display="block";
+    }
+    if(num==9 || num==10){
+        const echo = document.querySelector("#echo");
+        echo.innerHTML = '<img src="kyou.jpg">';
+        omikuji.style.display="none";
+        pull.style.display="none";
+        relode.style.display="block";
+    }
+    //クリックしたときどう動かすかここに書く
+    
+}
+
+relode.onclick=function () {
+    window.location.reload(); 
+}
+
+
+</script>
+</body>
+</html>
