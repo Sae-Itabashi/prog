@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ひとこと日記</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+<h1>びょうしるし</h1>
+<div>1びょうごとのきもちをのこせる</div>
+<!-- <h5 id="today"></h5> -->
+</header>
+<main>
+    <!-- <h5 id="today"></h5> -->
+    <p>↓いまのきもちをにゅうりょく↓</p>
+    <textarea id="text"></textarea>
+    <ul>
+        <li id="save">ほぞんぼたん</li>
+    </ul>
+    <p>↓かこのきもち↓</p>
+</main>
+
+<table id="list"></table>
+<script>
+    let week   = ["にち", "げつ", "か", "すい", "もく", "きん", "ど"];
+    let ap = "";
+    let now = new Date();           
+    let year = now.getFullYear();   
+    let month = now.getMonth() + 1;  
+    let date = now.getDate();        
+    let day = now.getDay();          
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    if(h>=12){
+        ap="ごご"
+    }else{
+        ap="ごぜん"
+    }
+    let n = year+"ねん"+month+"がつ"+date+"にち"+"("+week[day]+")"+ap+h+"じ"+m+"ふん"+s+"びょう";
+    $("#today").html(n);
+
+    $("#save").on("click",function(){
+        const value = $("#text").val();
+        localStorage.setItem(n,value);
+        const ran ='<tr><td>'+n+'</td><td>'+value+'</td></tr>'
+        $("#list").append(ran);
+        // alert("ok");
+    });
+
+
+    for(let i=0; i<localStorage.length; i++){
+    const key =localStorage.key(i);  
+    const value =localStorage.getItem(key); 
+    const html = '<tr><td>'+key+'</td><td>'+value+'</td></tr>'
+    $("#list").append(html);
+
+    }
+
+
+
+</script>
+</body>
+</html>
