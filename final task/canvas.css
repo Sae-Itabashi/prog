@@ -1,0 +1,57 @@
+html{
+    background-image: url("data/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    background: rgba(242, 255, 0, 0.452);
+}
+body{
+    padding: 5%;
+}
+#drowarea{
+    /* margin: 10px; */
+    border:1px solid rgba(110, 108, 108, 0.274);
+}
+
+#clear_btn{
+    width: 40px;
+   margin-top: 10px;
+}
+#save{
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 40px;
+}
+#pen{
+    width:30px;
+}
+#eraser{
+    width:40px;
+}
+#shikaku{
+    width:40px;
+}
+#maru{
+    width:40px;
+}
+#tex{
+    margin-left: 50px;
+}
+#load{
+    margin-left: 50px;
+}
+#size{
+    margin-left: 50px;
+}
+#col{
+    margin-left: 25px;
+}
+#back{
+    margin-left: 25px
+    ;
+}
+#shita{
+    background: rgba(242, 255, 0, 0.452);
+}
